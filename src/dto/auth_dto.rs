@@ -35,6 +35,22 @@ pub struct RefreshTokenRequest {
     pub refresh_token: String,
 }
 
+/// POST /api/v1/auth/logout
+#[derive(Debug, Deserialize)]
+pub struct LogoutRequest {
+    pub refresh_token: String,
+}
+
+/// POST /api/v1/auth/change-password
+#[derive(Debug, Deserialize, Validate)]
+pub struct ChangePasswordRequest {
+    #[validate(length(min = 1, message = "current password cannot be empty"))]
+    pub current_password: String,
+
+    #[validate(length(min = 8, message = "new password must be at least 8 characters"))]
+    pub new_password: String,
+}
+
 // ─────────────────────────────────────────
 // RESPONSES
 // ─────────────────────────────────────────
@@ -57,4 +73,10 @@ pub struct UserInfo {
     pub name: String,
     pub plan_type: String,
     pub created_at: DateTime<Utc>,
+}
+
+/// Generic success message response
+#[derive(Debug, Serialize)]
+pub struct MessageResponse {
+    pub message: String,
 }

@@ -28,7 +28,7 @@ redis = { version = "1.2.0", features = ["tokio-comp", "connection-manager"] }
 
 rdkafka = { version = "0.39.0", features = ["cmake-build"] }
 
-jsonwebtoken = "10.3.0"
+jsonwebtoken = { version = "10.3.0", features = ["rust_crypto"] }
 
 #Time
 chrono = { version = "0.4.44", features = ["serde"] }
