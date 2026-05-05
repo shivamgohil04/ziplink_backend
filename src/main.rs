@@ -1,5 +1,6 @@
 mod config;
 mod db;
+mod dto;
 mod errors;
 mod models;
 mod state;

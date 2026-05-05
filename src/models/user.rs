@@ -27,7 +27,6 @@ pub enum PlanType {
     Enterprise,
 }
 
-
 impl Default for PlanType {
     fn default() -> Self {
         PlanType::Free
