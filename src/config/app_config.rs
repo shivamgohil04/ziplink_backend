@@ -23,6 +23,9 @@ pub struct AppConfig {
     pub jwt_secret: String,
     pub jwt_expiry_hours: u64,
 
+    // Refresh Token
+    pub refresh_token_expiry_days: u64,
+
     // App
     pub base_url: String,
     pub rust_log: String,
@@ -58,6 +61,11 @@ impl AppConfig {
             jwt_expiry_hours: get_env("JWT_EXPIRY_HOURS", "24")
                 .parse()
                 .expect("JWT_EXPIRY_HOURS must be a valid number"),
+
+            // Refresh Token
+            refresh_token_expiry_days: get_env("REFRESH_TOKEN_EXPIRY_DAYS", "7")
+                .parse()
+                .expect("REFRESH_TOKEN_EXPIRY_DAYS must be a valid number"),
 
             // App
             base_url: get_env("BASE_URL", "http://localhost:8080"),

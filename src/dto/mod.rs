@@ -6,7 +6,10 @@ pub use url_dto::{
     CreateUrlRequest, ListUrlsQuery, ListUrlsResponse, UpdateUrlRequest, UrlResponse,
 };
 
-pub use auth_dto::{AuthResponse, LoginRequest, RefreshTokenRequest, RegisterRequest, UserInfo};
+pub use auth_dto::{
+    AuthResponse, ChangePasswordRequest, LoginRequest, LogoutRequest, MessageResponse,
+    RefreshTokenRequest, RegisterRequest, UserInfo,
+};
 
 pub use analytics_dto::{
     AnalyticsSummaryResponse, ClickEventResponse, ClicksListResponse, ClicksQuery, SummaryQuery,
